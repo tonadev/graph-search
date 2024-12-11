@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Análisis y Diseño de Algoritmos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+<nav class="flex justify-between">
+    <div>
+        <label class="container">Recorrido a lo profundo
+            <input type="radio" checked="checked" name="radio" id="dfsRadioButton">
+            <span class="checkmark"></span>
+        </label>
+        <label style="margin-left: 1rem;" class="container">Recorrido a lo ancho
+            <input type="radio" name="radio" id="bfsRadioButton">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+    <button class="btn primary-btn" onclick="startSearch()" style="margin-right: 1rem;">Recorrer</button>
+</nav>
+<main>
+    <div>
+        <div id="graph" style="height: 50vh; width: 100%;"></div>
+        <div id="search"></div>
+    </div>
+    <div id="editNodeModal" class="modal">
+        <div class="modal-container">
+            <i class="fa-solid fa-xmark modal-close" onclick="closeModal()"></i>
+            <div class="modal-content">
+                <div class="modal-image" style="margin-right: 2rem;">
+                    <i class="fa-solid fa-pencil"></i>
+                </div>
+                <div class="modal-body">
+                    <h3>¿Renombrar nodo?</h3>
+                    <input type="text" name="nodeName" id="nodeNameTextInput" placeholder="Editar nombre...">
+                    <div class="modal-buttons">
+                        <button class="btn primary-btn" onclick="renameNode()" style="margin-right: 1rem;">Renombrar</button>
+                        <button class="btn secondary-btn" onclick="closeModal()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
